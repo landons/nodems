@@ -1,0 +1,19 @@
+{
+  "name": "nodems",
+  "version": "0.1.0",
+  "author": "Landon Springer <landon.springer@gmail.com>",
+  "description": "A node-based enterprise data management system built on elastic search",
+  "main": "./server",
+  "dependencies" : {
+    "amdefine"	: ">=0.0.8",
+    "backbone"	: ">=1.0.0",
+    "moment"	: ">=2.1.0",
+    "requirejs"	: ">=2.1.8",
+    "swig"		: ">=1.0.0-pre1",
+    "underscore": ">=1.5.1"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  }
+}
