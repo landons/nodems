@@ -4,7 +4,7 @@ if (typeof define !== 'function')
 	var define = require('amdefine')(module);
 }
 
-define(['swig', '../lib/model/view', '../lib/model/node', '../lib/collection'], function(swig, View, Node, Collection) {
+define(['../lib/model/view', '../lib/model/node', '../lib/model/collection'], function(View, Node, Collection) {
 
 	return function(callback) {
 
@@ -21,8 +21,8 @@ define(['swig', '../lib/model/view', '../lib/model/node', '../lib/collection'], 
 				})
 			}
 		});
-
-		var UserList = Collection.extend({
+		
+		var users = new Collection({
 			type: 'list',
 			filters: [],
 			comparators: [],
@@ -35,14 +35,12 @@ define(['swig', '../lib/model/view', '../lib/model/node', '../lib/collection'], 
 					}
 				})
 			}
-		});
-
-		var list = new UserList([
+		}, [
 			new User({ first_name: 'Landon', last_name: 'Springer' }),
 			new User({ first_name: 'John', last_name: 'Doe' })
 		]);
 
-		return callback(list.render('list'));
+		return callback(users.render('list'));
 	};
 
 });

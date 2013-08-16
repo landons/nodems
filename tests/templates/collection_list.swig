@@ -1,4 +1,4 @@
-{% extends '../layouts/html5.swig' %}
+{# {% extends '../layouts/html5.swig' %} #}
 
 {% block content %}
 
@@ -6,7 +6,8 @@
 
 <table>
 	<tbody>
-	{% for item in collection %}
+	{% for item in collection.items %}
+		{{ item.get('first_name') }}
 		{{ item.render('teaser') }}
 	{% endfor %}
 	</tbody>
